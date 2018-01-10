@@ -20,8 +20,13 @@ export class PacientesProvider {
   getListPatients(){
     return this.http.get(this.basepath+"/patients");
   }
-
+  deletePatient(id:number){
+    return this.http.delete(this.basepath+"/patients/"+id);
+  }
   getListExercises(){
     return this.http.get(this.basepath+"/exercises");
+  }
+  deleteExercise(id:number){
+    return this.http.delete(this.basepath+"/exercises/"+id);
   }
 }

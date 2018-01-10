@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="back">
+<ion-content class="back" padding>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
@@ -16,7 +16,7 @@
 
   <ion-item>
 
-    <h2 class="text-md-primary"> <ion-icon name="person"></ion-icon> <b>{{item.name}}</b></h2>
+    <h2 class="Mytext"> <ion-icon name="person"></ion-icon> <b>{{item.name}}</b></h2>
     <div>
       <p class="text-md-dark"><b> <ion-icon name="call"></ion-icon> {{item.phone}}</b></p>
       <p class="text-md-dark"><b>Progresso: {{item.progress}}</b></p>
