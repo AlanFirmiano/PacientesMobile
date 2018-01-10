@@ -3,10 +3,47 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Pacientes</ion-title>
+    <ion-title>  <ion-icon name="people"></ion-icon> Pacientes</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <p>lista de pacientes</p>
+<ion-content padding class="back">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let item of list_patients" class="myCard">
+
+  <ion-item>
+
+    <h2 class="text-md-primary"> <ion-icon name="person"></ion-icon> <b>{{item.name}}</b></h2>
+    <div>
+      <p class="text-md-dark"><b> <ion-icon name="call"></ion-icon> {{item.phone}}</b></p>
+      <p class="text-md-dark"><b>Progresso: {{item.progress}}</b></p>
+    </div>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear >
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear >
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <button ion-button icon-left clear >
+        <ion-icon name="stats"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <button ion-button icon-left clear >
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
 </ion-content>
